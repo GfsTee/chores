@@ -37,7 +37,7 @@ const Timer = () => {
     useEffect(() => {
         let id = setTimeout(() => {
             calculateTimeLeft();
-        }, 1);
+        }, 1000);
         return () => clearInterval(id)
     }, [timeLeft]);
     return (
