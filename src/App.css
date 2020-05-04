@@ -1,12 +1,20 @@
-.chores {
-
+.cat-chores, .home-chores, .training {
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.fountain-timer, .wc-timer {
+.timer {
   padding: 3%;
   display: flex;
   align-items: center;
   flex-direction: column;
+}
+.aside {
+  position: absolute;
+  left: 10%;
+  transform: rotate(-90deg);
+  transform-origin: left;
+  font-size: 2em;
+  top: 60%;
 }

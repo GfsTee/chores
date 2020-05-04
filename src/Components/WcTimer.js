@@ -3,9 +3,9 @@ import Timer from './Timer';
 
 const WcTimer = () => {
     return (
-        <div className="fountain-timer">
-            <h2>Toilet</h2>
-            <Timer />
+        <div className="timer">
+            <h2>Katzenklo</h2>
+            <Timer days={7} />
         </div>
     );
 }

@@ -1,14 +1,19 @@
 import React from 'react';
-import WcTimer from './Components/WcTimer';
-import FountainTimer from './Components/FountainTimer';
+
 import './App.css'
+import Cats from './Components/Cats';
+import Home from './Components/Home';
+import Training from './Components/Training';
 
 function App() {
   return (
-    <div className="chores">
-      <WcTimer />
-      <FountainTimer />
-    </div>
+    <>
+      <Cats />
+      <hr />
+      <Home />
+      <hr />
+      <Training />
+    </>
   );
 }
 

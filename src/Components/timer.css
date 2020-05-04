@@ -31,6 +31,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
 
     /* Sort of an arbitrary number; adjust to your liking */
     font-size: 48px;
@@ -73,4 +74,8 @@
     background-color: #e50000;
     border: 3px solid rgb(117, 209, 63);
   }
+}
+
+.small {
+  font-size: .3em;
 }
