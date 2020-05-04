@@ -12,7 +12,7 @@
 }
 .aside {
   position: absolute;
-  left: 10%;
+  left: 1em;
   transform: rotate(-90deg);
   transform-origin: left;
   font-size: 2em;
