@@ -43,15 +43,15 @@ const Timer = (props) => {
     return (
         <div className="timer">
             <h2>{props.headline}</h2>
-            <div class="base-timer" onClick={() => setTimeLeft(initialTime * day)}>
+            <div className="base-timer" onClick={() => setTimeLeft(initialTime * day)}>
                 <div className={`overlay ${(timeLeft === 0) ? "show" : ""}`}>
-                    <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                        <g class="base-timer__circle">
-                            <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45" />
+                    <svg className="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                        <g className="base-timer__circle">
+                            <circle className="base-timer__path-elapsed" cx="50" cy="50" r="45" />
                             <path
                                 id="base-timer-path-remaining"
-                                stroke-dasharray={`${Math.floor(timeLeft / (day * props.day / 283))} 283`}
-                                class={`base-timer__path-remaining`}
+                                strokeDasharray={`${Math.floor(timeLeft / ((day * props.days) / 283))} 283`}
+                                className={`base-timer__path-remaining`}
                                 style={remainingPathColor}
                                 d="
           M 50, 50
@@ -62,11 +62,13 @@ const Timer = (props) => {
                             ></path>
                         </g>
                     </svg>
-                    <div class="base-timer__label">
+                    <div className="base-timer__label">
                         <span className="big">
                             {Math.floor(timeLeft / day)}
                         </span>
-
+                        <span className="hours">
+                            {Math.floor((timeLeft % day) / 3600)}
+                        </span>
                         <span className="small">
                             {timeLeft.toString().slice(-2)}
                         </span>

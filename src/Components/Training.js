@@ -5,7 +5,7 @@ const Training = () => {
     return (
         <div className="training">
             <span className="aside">Training</span>
-            <TimerUp headline="Sport" alert={true} day={2} />
+            <TimerUp headline="Sport" alert={true} days={3} />
 
         </div>
     );

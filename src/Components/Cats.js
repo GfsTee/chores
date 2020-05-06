@@ -5,7 +5,7 @@ const Cats = () => {
     return (
         <div className="cat-chores">
             <span className="aside">Katzen</span>
-            <Timer headline="Katzenklo" days={7} />
+            <Timer headline="Katzenklo" days={3} />
             <Timer headline="Brunnen" days={7} />
         </div>
     );
