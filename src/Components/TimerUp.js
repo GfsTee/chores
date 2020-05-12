@@ -6,7 +6,8 @@ import './timer.css'
 const TimerUp = (props) => {
     const day = 86400 // 86400
     const initialTime = 0
-    const [timeLeft, setTimeLeft] = useState(initialTime);
+    const initialTimeLeft = () => Number(window.localStorage.getItem(props.headline)) || 0
+    const [timeLeft, setTimeLeft] = useState(initialTimeLeft);
     // const [timeLeft, setTimeLeft] = useState(604800);
     const calculateTimeLeft = () => {
         setTimeLeft(prev => prev + 1)
@@ -30,6 +31,7 @@ const TimerUp = (props) => {
         remainingPathColor = COLOR_CODES.alert
     };
     useEffect(() => {
+        window.localStorage.setItem(props.headline, timeLeft)
         let id = setTimeout(() => {
             calculateTimeLeft();
         }, 1000);

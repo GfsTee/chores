@@ -1,12 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './timer.css'
-
+import { useLocalState } from './localStorageHooks'
 
 
 const Timer = (props) => {
     const day = 86400 // 86400
     const initialTime = props.days
-    const [timeLeft, setTimeLeft] = useState(initialTime * day);
+    const initialTimeLeft = () => Number(window.localStorage.getItem(props.headline)) || (initialTime * day)
+    const [timeLeft, setTimeLeft] = useState(initialTimeLeft);
     // const [timeLeft, setTimeLeft] = useState(604800);
 
     const calculateTimeLeft = () => {
@@ -35,6 +36,7 @@ const Timer = (props) => {
         remainingPathColor = COLOR_CODES.alert
     };
     useEffect(() => {
+        window.localStorage.setItem(props.headline, timeLeft)
         let id = setTimeout(() => {
             calculateTimeLeft();
         }, 1000);
