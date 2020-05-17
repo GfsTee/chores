@@ -11,9 +11,7 @@ const Timer = (props) => {
     // const [timeLeft, setTimeLeft] = useState(604800);
 
     const calculateTimeLeft = () => {
-        if (timeLeft > 0) {
-            setTimeLeft(prev => prev - 1)
-        }
+        setTimeLeft(prev => prev - 1)
     }
     const COLOR_CODES = {
         info: {
