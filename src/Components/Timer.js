@@ -4,7 +4,7 @@ import { useLocalState } from './localStorageHooks'
 
 
 const Timer = (props) => {
-    const day = 86400 // 86400
+    const day = 20 // 86400
     const initialTime = props.days
     const initialTimeLeft = () => Number(window.localStorage.getItem(props.headline)) || (initialTime * day)
     const [timeLeft, setTimeLeft] = useState(initialTimeLeft);
@@ -64,7 +64,7 @@ const Timer = (props) => {
                     </svg>
                     <div className="base-timer__label">
                         <span className="big">
-                            {Math.floor(timeLeft / day)}
+                            {timeLeft > 0 ? Math.floor(timeLeft / day) : Math.ceil(timeLeft / day)}
                         </span>
                         <span className="hours">
                             {Math.floor((timeLeft % day) / 3600)}
