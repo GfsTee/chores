@@ -4,7 +4,7 @@ import { useLocalState } from './localStorageHooks'
 
 
 const Timer = (props) => {
-    const day = 20 // 86400
+    const day = 86400  // 86400
     const initialTime = props.days
     const initialTimeLeft = () => Number(window.localStorage.getItem(props.headline)) || (initialTime * day)
     const [timeLeft, setTimeLeft] = useState(initialTimeLeft);
