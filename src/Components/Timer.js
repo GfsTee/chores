@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './timer.css'
-import { useLocalState } from './localStorageHooks'
+// import { useLocalState } from './localStorageHooks'
 
 
 const Timer = (props) => {
@@ -44,7 +44,7 @@ const Timer = (props) => {
         <div className="timer">
             <h2>{props.headline}</h2>
             <div className="base-timer" onClick={() => setTimeLeft(initialTime * day)}>
-                <div className={`overlay ${(timeLeft === 0) ? "show" : ""}`}>
+                <div className={`overlay ${(timeLeft <= 0) ? "show" : ""}`}>
                     <svg className="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                         <g className="base-timer__circle">
                             <circle className="base-timer__path-elapsed" cx="50" cy="50" r="45" />
