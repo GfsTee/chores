@@ -36,7 +36,7 @@ const TimerUp = (props) => {
             calculateTimeLeft();
         }, 1000);
         return () => clearInterval(id)
-    }, [timeLeft]);
+    }, [timeLeft, props.headline]);
     return (
         <div className="timer">
             <h2>{props.headline}</h2>
